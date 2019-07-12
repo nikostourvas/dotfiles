@@ -38,7 +38,7 @@ font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 9
 font pango:Terminus 9px
 
 #### nikos no titlebars
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 0
 
 #### launch caprine always in floating mode
 for_window [class="Caprine"] floating enable
@@ -262,7 +262,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Please remove the following exec line:
 #######################################################################
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/229601_1600x1200.jpg
+exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/Wallpapers/sunset-sd_2.png
 exec i3-config-wizard
 exec caprine
 exec viber-unofficial.viber
@@ -271,9 +271,52 @@ exec thunderbird
 #exec "setxkbmap -layout us,gr"
 #exec "setxkbmap -option 'grp:win_space_toggle'"
 exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec redshift
+exec redshift-gtk
 #exec fluxgui
 #exec --no-startup-id i3-battery-popup
+
+# gaps
+gaps inner 10
+gaps outer 0
+
+#smart_gaps on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 4
+        bindsym Shift+0     gaps inner all set 0
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 # GNOME startup applications
 
@@ -302,3 +345,5 @@ exec_always xset +fp /home/nikos/.local/share/fonts
 exec_always xset fp rehash
 
 # FIX UPDATER
+#
+#
