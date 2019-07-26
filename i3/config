@@ -31,6 +31,23 @@ exec_always --no-startup-id "setxkbmap -option 'grp:win_space_toggle'"
 #exec_always "xmodmap -e 'keysym Caps_Lock = Escape'" #set caps_lock as escape
 #exec_always "setxkbmap -layout us -option caps:escape"
 
+####
+## use workspaces on different monitors
+workspace 1 output LVDS1
+workspace 2 output LVDS1
+workspace 3 output LVDS1
+workspace 4 output LVDS1
+workspace 5 output LVDS1
+workspace 6 output LVDS1
+workspace 7 output VGA1
+workspace 8 output VGA1
+workspace 9 output VGA1
+workspace 10 output VGA1
+
+# add HDMI monitor when connected
+exec --no-startup-id xrandr --output VGA1 --right-of LVDS1
+bindsym $Mod4+m exec --no-startup-id xrandr --output VGA1 --auto --right-of LVDS1
+
 #### nikos edit font
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:DejaVu Sans Mono 8
@@ -281,43 +298,6 @@ gaps outer 0
 
 #smart_gaps on
 
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 4
-        bindsym Shift+0     gaps inner all set 0
-
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
 # GNOME startup applications
 
 # network manager
@@ -343,6 +323,9 @@ exec update-notifier
 # something related with siji font
 exec_always xset +fp /home/nikos/.local/share/fonts
 exec_always xset fp rehash
+
+# caja fm shortcut
+bindsym Mod4+n exec caja
 
 # FIX UPDATER
 #
