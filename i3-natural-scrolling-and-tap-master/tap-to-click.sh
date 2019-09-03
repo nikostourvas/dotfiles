@@ -1,0 +1,1 @@
+/home/nikos/dotfiles/scripts/tap-to-click.sh

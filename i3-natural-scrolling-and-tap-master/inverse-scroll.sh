@@ -1,0 +1,1 @@
+/home/nikos/dotfiles/scripts/inverse-scroll.sh
