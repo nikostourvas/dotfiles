@@ -70,8 +70,8 @@ for_window [class="Thunderbird"] floating enable
 hide_edge_borders smart
 
 # natural scrolling and tap to click
-exec ~/.scripts/i3-natural-scrolling-and-tap-master/inverse-scroll.sh
-exec ~/.scripts/i3-natural-scrolling-and-tap-master/tap-to-click.sh
+exec ~/dotfiles/scripts/inverse-scroll.sh
+exec ~/dotfiles/scripts/tap-to-click.sh
 
 # Launch gnome settings
 bindsym Mod4+Shift+Return exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
@@ -253,9 +253,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym Mod4+Shift+x exec i3lock
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 1  # increase screen brightness
@@ -279,7 +279,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Please remove the following exec line:
 #######################################################################
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/Wallpapers/Big_dipper.png
+exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/Wallpapers/owl_crop.png
 exec i3-config-wizard
 #exec caprine
 #exec viber-unofficial.viber
@@ -296,7 +296,7 @@ exec redshift-gtk
 gaps inner 10
 gaps outer 0
 
-#smart_gaps on
+smart_gaps on
 
 # GNOME startup applications
 

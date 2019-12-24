@@ -1,1 +1,0 @@
-/home/nikos/dotfiles/scripts/README.md
