@@ -16,3 +16,4 @@ sudo apt install chromium-beta
 # Spotify
 # Dropbox
 # R-base repository & Rstudio
+# Docker
