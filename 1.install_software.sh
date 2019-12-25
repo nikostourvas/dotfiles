@@ -30,11 +30,13 @@ sudo apt install -y compton \
 # sudo sensors-detect
 
 # Install Siji font
+cd 
 git clone https://github.com/stark/siji && cd siji
 ./install.sh
 
 # Install Nextwaita
 git clone https://github.com/paullinuxthemer/Nextwaita && cd Nextwaita
+mkdir ~/.themes
 cp -r . ~/.themes
 # open manualy lxappearance and set the theme and font size (Sans 7)
 
