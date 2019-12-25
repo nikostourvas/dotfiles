@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ln -sv ~/dotfiles/.vimrc ~
-ln -sv ~/dotfiles/zathurarc ~/.config/zathura
+ln -sv ~/dotfiles/zathurarc ~/.config/
 ln -sv ~/dotfiles/redshift.conf ~/.config/
 mkdir ~/.config/polybar
 ln -sv ~/dotfiles/polybar/config ~/.config/polybar/
