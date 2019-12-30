@@ -279,7 +279,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Please remove the following exec line:
 #######################################################################
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/Wallpapers/owl_crop.png
+exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/Wallpapers/wallhaven-421k1y.jpg
 exec i3-config-wizard
 #exec caprine
 #exec viber-unofficial.viber
@@ -289,6 +289,7 @@ exec thunderbird
 #exec "setxkbmap -option 'grp:win_space_toggle'"
 #exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec redshift-gtk
+exec blueman-applet
 #exec fluxgui
 #exec --no-startup-id i3-battery-popup
 

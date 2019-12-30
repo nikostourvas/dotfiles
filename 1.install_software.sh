@@ -8,6 +8,7 @@ sudo apt install -y compton \
 	polybar \
 	redshift-gtk \
 	nm-tray \
+	blueman \
 	rofi \
 	pavucontrol \
 	caja \
