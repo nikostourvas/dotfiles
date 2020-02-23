@@ -24,11 +24,17 @@ sudo apt install -y compton \
 	vim \
 	gimp \
 	virtualbox \
-	audacity 
+	audacity \
+	git \
+	automake \
+	autoconf
 
 # Detect laptop sensors
 # Run manualy
 # sudo sensors-detect
+
+# Install Vundle for vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install Siji font
 cd 
@@ -44,3 +50,10 @@ cp -r . ~/.themes
 # Setting for Siji font on Ubuntu and Debian systems
 sudo dpkg-reconfigure fontconfig-config
 sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf && fc-cache
+
+# Install light (program to configure backlight and more)
+git clone https://github.com/haikarainen/light.git
+cd light*
+./autogen.sh
+./configure && make
+sudo make install
