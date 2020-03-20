@@ -13,8 +13,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-rmarkdown'
-
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'	
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,3 +56,23 @@ let g:pandoc#completion#bib#use_preview = 1
 :set hlsearch
 :set number
 :set keymap=greek_utf-8 
+:set iminsert=0 "not greek as default"
+:set imsearch=-1 "not greek as default"
+
+" Settings for python
+"https://realpython.com/vim-and-python-a-match-made-in-heaven/#vim-extensions
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" Flag unnecessary whitespace
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+set encoding=utf-8
+
+" make python code look pretty
+let python_highlight_all=1
+syntax on
+

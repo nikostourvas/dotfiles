@@ -11,12 +11,13 @@ sudo apt install -y compton \
 	blueman \
 	rofi \
 	pavucontrol \
-	caja \
+	caja caja-dropbox \
 	lxappearance \
 	lm-sensors hddtemp \
 	p7zip p7zip-full p7zip-rar \
 	arandr \
 	qt5ct \
+	qt5-style-plugins \
 	qbittorrent \
 	zathura \
 	vlc \
@@ -27,7 +28,12 @@ sudo apt install -y compton \
 	audacity \
 	git \
 	automake \
-	autoconf
+	autoconf \
+	feh \
+	s-tui
+
+# Install snap packages
+sudo snap install p7zip-desktop
 
 # Detect laptop sensors
 # Run manualy
@@ -57,3 +63,24 @@ cd light*
 ./autogen.sh
 ./configure && make
 sudo make install
+
+# Fix xbacklight, required to get icon in polybar
+sudo touch /usr/share/X11/xorg.conf.d/20-intel.conf
+sudo echo "Section "Device"
+         Identifier  "card0"
+         Driver      "intel"
+         Option      "Backlight"  "intel_backlight"
+         BusID       "PCI:0:2:0"
+EndSection" >> /usr/share/X11/xorg.conf.d/20-intel.conf
+
+# Fix screen tearing
+sudo touch /etc/X11/xorg.conf.d/20-intel.conf
+sudo echo "Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "i915"
+   Option      "TearFree"    "true"
+   Option      "DRI"         "3"
+EndSection" >> /etc/X11/xorg.conf.d/20-intel.conf
+
+# Vim keybindgs in bash
+echo "set -o vi" >> .bashrc
