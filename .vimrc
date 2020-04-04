@@ -59,7 +59,9 @@ let g:pandoc#completion#bib#use_preview = 1
 :set iminsert=0 "not greek as default"
 :set imsearch=-1 "not greek as default"
 
+""""""""""""""""""""""""""""
 " Settings for python
+""""""""""""""""""""""""""""
 "https://realpython.com/vim-and-python-a-match-made-in-heaven/#vim-extensions
 " Enable folding
 set foldmethod=indent
@@ -67,12 +69,12 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
-" Flag unnecessary whitespace
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
 set encoding=utf-8
 
 " make python code look pretty
 let python_highlight_all=1
 syntax on
 
+" make syntastic spell-check for python3
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['python']

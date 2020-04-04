@@ -30,7 +30,8 @@ sudo apt install -y compton \
 	automake \
 	autoconf \
 	feh \
-	s-tui
+	s-tuia \
+	fonts-noto
 
 # Install snap packages
 sudo snap install p7zip-desktop
@@ -84,3 +85,25 @@ EndSection" >> /etc/X11/xorg.conf.d/20-intel.conf
 
 # Vim keybindgs in bash
 echo "set -o vi" >> .bashrc
+
+# Fix Calibri font rendering on Linux
+# To have Calibri available, you need to install it from a Windows partition
+mkdir ~/.config/fontconfig && cd ~/.config/fontconfig
+touch fonts.conf
+echo "<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <match target="font">
+    <test name="family" compare="contains">
+      <string>Calibri</string>
+    </test>
+    <edit name="embeddedbitmap" mode="assign">
+      <bool>false</bool>
+    </edit>
+  </match>
+</fontconfig>" >> ~/.config/fontconfig/fonts.conf
+
+# Install timeshift
+sudo add-apt-repository -y ppa:teejee2008/timeshift
+sudo apt update
+sudo apt -y install timeshift

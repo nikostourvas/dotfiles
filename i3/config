@@ -55,7 +55,19 @@ font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 9
 font pango:Terminus 9px
 
 ### nikos no titlebars
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 5
+
+#################
+# Border Colors #
+#################
+# class                 border  backgr. text    indicator child_border
+client.focused          #f26964 #f26964 #000000 #2e9ef4   #f26964
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
 
 #### launch caprine always in floating mode
 for_window [class="Caprine"] floating enable
@@ -294,6 +306,7 @@ exec i3-config-wizard
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec redshift-gtk
 exec blueman-applet
+exec skype
 #exec fluxgui
 #exec --no-startup-id i3-battery-popup
 
@@ -331,6 +344,7 @@ exec_always xset fp rehash
 
 # caja fm shortcut
 bindsym Mod4+n exec caja
+
 
 # FIX UPDATER
 #
