@@ -31,7 +31,10 @@ sudo apt install -y compton \
 	autoconf \
 	feh \
 	s-tuia \
-	fonts-noto
+	fonts-noto \
+	mlocate \
+	scrot \
+	pandoc pandoc-citeproc
 
 # Install snap packages
 sudo snap install p7zip-desktop
@@ -107,3 +110,8 @@ echo "<?xml version="1.0"?>
 sudo add-apt-repository -y ppa:teejee2008/timeshift
 sudo apt update
 sudo apt -y install timeshift
+
+# Install obs
+sudo add-apt-repository -y ppa:obsproject/obs-studio
+sudo apt-get update
+sudo apt-get install -y obs-studio

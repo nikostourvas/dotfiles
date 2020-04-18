@@ -295,7 +295,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Please remove the following exec line:
 #######################################################################
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/wallpapers/wallhaven-482rx2.jpg
+exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/wallpapers/wallhaven-nkmqp6.jpg
 exec i3-config-wizard
 #exec caprine
 #exec viber-unofficial.viber
@@ -306,7 +306,7 @@ exec i3-config-wizard
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec redshift-gtk
 exec blueman-applet
-exec skype
+#exec skype
 #exec fluxgui
 #exec --no-startup-id i3-battery-popup
 
@@ -345,6 +345,8 @@ exec_always xset fp rehash
 # caja fm shortcut
 bindsym Mod4+n exec caja
 
+# screenshots
+bindsym --release Print exec "scrot -m '/home/nikos/Pictures/%s_%H%M_%d.%m.%Y_$wx$h.png'"
 
 # FIX UPDATER
 #

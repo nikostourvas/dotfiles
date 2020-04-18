@@ -18,9 +18,11 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'	
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plugin 'itchyny/lightline.vim'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,6 +61,10 @@ let g:pandoc#completion#bib#use_preview = 1
 :set iminsert=0 "not greek as default"
 :set imsearch=-1 "not greek as default"
 
+" needed for powerline to work
+"set laststatus=2
+"set noshowmode
+
 """"""""""""""""""""""""""""
 " Settings for python
 """"""""""""""""""""""""""""
@@ -78,3 +84,17 @@ syntax on
 " make syntastic spell-check for python3
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers = ['python']
+
+" zotero integration
+" https://retorque.re/zotero-better-bibtex/citing/cayw/
+function! ZoteroCite()
+  " pick a format based on the filetype (customize at will)
+  let format = &filetype =~ '.*tex' ? 'citep' : 'pandoc'
+  let api_call = 'http://127.0.0.1:23119/better-bibtex/cayw?format='.format.'&brackets=1'
+  let ref = system('curl -s '.shellescape(api_call))
+  return ref
+endfunction
+
+noremap <leader>z "=ZoteroCite()<CR>p
+inoremap <C-z> <C-r>=ZoteroCite()<CR>
+

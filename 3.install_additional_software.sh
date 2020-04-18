@@ -1,6 +1,13 @@
 #!/bin/bash
 
 # Install zotero manually
+# For citations in markdown you need to install "better-bibtex"
+# In order to produce text with RMarkdown you need to install
+# tinytex
+# a plugin is install in vim to allow zotero to communicate and
+# search for citation. see:
+#https://retorque.re/zotero-better-bibtex/citing/cayw/
+# pandoc and pandoc-citeproc are also needed to install on ubuntu
 
 sudo add-apt-repository ppa:saiarcot895/chromium-beta
 sudo apt update
