@@ -57,11 +57,14 @@ font pango:Terminus 9px
 ### nikos no titlebars
 for_window [class="^.*"] border pixel 5
 
+### rounded corners???
+#border_radius 2
+
 #################
 # Border Colors #
 #################
 # class                 border  backgr. text    indicator child_border
-client.focused          #f26964 #f26964 #000000 #2e9ef4   #f26964
+client.focused          #88c0d0 #88c0d0 #000000 #2e9ef4   #88c0d0
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -295,7 +298,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # Please remove the following exec line:
 #######################################################################
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/wallpapers/wallhaven-nkmqp6.jpg
+#exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/wallpapers/wallhaven-nkmqp6.jpg
+exec --no-startup-id nitrogen --restore
 exec i3-config-wizard
 #exec caprine
 #exec viber-unofficial.viber
@@ -304,14 +308,14 @@ exec i3-config-wizard
 #exec "setxkbmap -layout us,gr"
 #exec "setxkbmap -option 'grp:win_space_toggle'"
 exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec redshift-gtk
-exec blueman-applet
+exec --no-startup-id redshift-gtk
+exec --no-startup-id blueman-applet
 #exec skype
 #exec fluxgui
 #exec --no-startup-id i3-battery-popup
 
 # gaps
-gaps inner 10
+gaps inner 0 # previous value 10
 gaps outer 0
 
 smart_gaps on
@@ -322,18 +326,18 @@ smart_gaps on
 exec --no-startup-id nm-applet
 
 # SSH Key Agent
-exec /usr/bin/gnome-keyring-daemon --start --components=ssh
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
 
 # Snap user application autostart helper
-exec /usr/bin/snap userd --autostart
+exec --no-startup-id /usr/bin/snap userd --autostart
 
 # Dropbox
-exec caja-dropbox start -i
+exec --no-startup-id caja-dropbox start -i
 
 # Night light
 
 # Update Notifier
-exec update-notifier
+exec --no-startup-id update-notifier
 
 #Backup Monitor
 #exec /usr/lib/deja-dup/deja-dup-monitor

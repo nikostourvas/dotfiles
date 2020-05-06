@@ -34,10 +34,13 @@ sudo apt install -y compton \
 	fonts-noto \
 	mlocate \
 	scrot \
-	pandoc pandoc-citeproc
-
+	pandoc pandoc-citeproc \
+	nitrogen \
+	pdfgrep
+	
 # Install snap packages
 sudo snap install p7zip-desktop
+sudo snap install keepassxc
 
 # Detect laptop sensors
 # Run manualy
@@ -52,10 +55,17 @@ git clone https://github.com/stark/siji && cd siji
 ./install.sh
 
 # Install Nextwaita
-git clone https://github.com/paullinuxthemer/Nextwaita && cd Nextwaita
-mkdir ~/.themes
-cp -r . ~/.themes
+#git clone https://github.com/paullinuxthemer/Nextwaita && cd Nextwaita
+#mkdir ~/.themes
+#cp -r . ~/.themes
 # open manualy lxappearance and set the theme and font size (Sans 7)
+
+# Install Nordic gtk theme
+#git clone https://github.com/EliverLara/Nordic 
+#mkdir ~/.themes 
+#cp -r Nordic ~/.themes/Nordic
+
+#cp -r . ~/.themes
 
 # Setting for Siji font on Ubuntu and Debian systems
 sudo dpkg-reconfigure fontconfig-config
