@@ -57,7 +57,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Ubuntu:pixelsize=11;2"
+font-0 = "Noto Sans:style=Bold:pixelsize=11;3:antialias=true"
 font-1 = "Unifont:style=Medium;4"
 font-2 = "Siji:style=Regular;3"
 

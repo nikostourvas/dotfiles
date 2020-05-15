@@ -125,3 +125,8 @@ sudo apt -y install timeshift
 sudo add-apt-repository -y ppa:obsproject/obs-studio
 sudo apt-get update
 sudo apt-get install -y obs-studio
+
+# Install tlp
+sudo add-apt-repository -y ppa:linrunner/tlp
+sudo apt update
+sudo apt install -y tlp tlp-rdw

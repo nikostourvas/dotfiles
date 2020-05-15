@@ -258,6 +258,9 @@ bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #	position top
 #}
 
+# workspace names deamon for i3bar
+#exec_always --no-startup-id exec i3-workspace-names-daemon
+
 #Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -353,5 +356,6 @@ bindsym Mod4+n exec caja
 bindsym --release Print exec "scrot -m '/home/nikos/Pictures/%s_%H%M_%d.%m.%Y_$wx$h.png'"
 
 # FIX UPDATER
+#
 #
 #
