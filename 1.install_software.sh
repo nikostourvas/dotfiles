@@ -30,7 +30,7 @@ sudo apt install -y compton \
 	automake \
 	autoconf \
 	feh \
-	s-tuia \
+	s-tui \
 	fonts-noto \
 	mlocate \
 	scrot \

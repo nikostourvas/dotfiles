@@ -349,6 +349,9 @@ exec --no-startup-id update-notifier
 exec_always xset +fp /home/nikos/.local/share/fonts
 exec_always xset fp rehash
 
+# Set screen timeout after 30 minutes
+exec_always --no-startup-id xset dpms 0 0 1800
+
 # caja fm shortcut
 bindsym Mod4+n exec caja
 
