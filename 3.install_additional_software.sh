@@ -24,3 +24,4 @@ sudo apt install chromium-browser
 # Dropbox
 # R-base repository & Rstudio
 # Docker
+# Etcher to write usb drives

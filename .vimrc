@@ -23,6 +23,15 @@ Plugin 'tpope/vim-fugitive'
 "Plugin 'itchyny/lightline.vim'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'dracula/vim', { 'name': 'dracula' }
+"for R usage"
+Plugin 'ncm2/ncm2'
+Plugin 'roxma/nvim-yarp'
+Plugin 'jalvesaq/Nvim-R'
+Plugin 'gaalcaras/ncm-R'
+" Vim 8 only
+if !has('nvim')
+    Plugin 'roxma/vim-hug-neovim-rpc'
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -98,3 +107,10 @@ endfunction
 noremap <leader>z "=ZoteroCite()<CR>p
 inoremap <C-z> <C-r>=ZoteroCite()<CR>
 
+" colorscheme
+colo nord
+
+" r configuration
+let R_in_buffer = 0
+let R_tmux_split = 0
+let R_applescript = 0
