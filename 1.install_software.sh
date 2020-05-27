@@ -36,7 +36,8 @@ sudo apt install -y compton \
 	scrot \
 	pandoc pandoc-citeproc \
 	nitrogen \
-	pdfgrep
+	pdfgrep \
+	grsync
 	
 # Install snap packages
 sudo snap install p7zip-desktop
