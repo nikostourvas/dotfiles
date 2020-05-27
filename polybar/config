@@ -58,9 +58,9 @@ module-margin-left = 1
 module-margin-right = 2
 
 ;font-0 = "Cantarell:style=Bold:pixelsize=11;4:antialias=true"
-font-0 = "Noto Sans:style=SemiBold:pixelsize=10;3:antialias=true"
+font-0 = "Noto Sans:style=SemiBold:pixelsize=10;4:antialias=true"
 font-1 = "Unifont:style=Medium;4"
-font-2 = "Siji:style=Regular;3"
+font-2 = "Siji:style=Regular;4"
 
 modules-left = bspwm i3 memory cpu title
 modules-center = date
