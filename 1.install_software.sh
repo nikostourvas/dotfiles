@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt update
 sudo add-apt-repository -y ppa:kgilmer/speed-ricer
+sudo apt update
 
 sudo apt install -y compton \
 	i3-gaps i3-gaps-wm-dbg \
@@ -37,7 +37,8 @@ sudo apt install -y compton \
 	pandoc pandoc-citeproc \
 	nitrogen \
 	pdfgrep \
-	grsync
+	grsync \
+	luckybackup
 	
 # Install snap packages
 sudo snap install p7zip-desktop

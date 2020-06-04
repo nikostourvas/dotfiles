@@ -271,7 +271,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #bindsym $mod+e layout toggle split # should already exist but use if split orientation  messes up
 
 # Lockscreen
-bindsym Mod4+Shift+x exec i3lock
+bindsym Mod4+Shift+x exec i3lock-fancy -g
 
 # Pulse Audio controls
 #  Run "pactl list sinks" to find device name
