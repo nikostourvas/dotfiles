@@ -1,11 +1,10 @@
 #!/bin/bash
 
 sudo add-apt-repository -y ppa:kgilmer/speed-ricer
-sudo apt update
+sudo apt update && sudo apt -y upgrade
 
 sudo apt install -y compton \
 	i3-gaps i3-gaps-wm-dbg \
-	polybar \
 	redshift-gtk \
 	nm-tray \
 	blueman \
@@ -26,7 +25,6 @@ sudo apt install -y compton \
 	gimp \
 	virtualbox \
 	audacity \
-	git \
 	automake \
 	autoconf \
 	feh \
@@ -38,7 +36,9 @@ sudo apt install -y compton \
 	nitrogen \
 	pdfgrep \
 	grsync \
-	luckybackup
+	luckybackup \
+	tldr \
+	autorandr
 	
 # Install snap packages
 sudo snap install p7zip-desktop
@@ -52,7 +52,7 @@ sudo snap install keepassxc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install Siji font
-cd 
+cd ~/Downloads 
 git clone https://github.com/stark/siji && cd siji
 ./install.sh
 
@@ -74,11 +74,13 @@ sudo dpkg-reconfigure fontconfig-config
 sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf && fc-cache
 
 # Install light (program to configure backlight and more)
+cd ~/Downloads
 git clone https://github.com/haikarainen/light.git
 cd light*
 ./autogen.sh
 ./configure && make
 sudo make install
+cd # retrun to home directory
 
 # Fix xbacklight, required to get icon in polybar
 sudo touch /usr/share/X11/xorg.conf.d/20-intel.conf
