@@ -94,6 +94,11 @@ syntax on
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers = ['python']
 
+""""""""""""""""""""""""""
+" Settings for nvim-R
+" """"""""""""""""""""""""
+let R_assign = 0
+
 " zotero integration
 " https://retorque.re/zotero-better-bibtex/citing/cayw/
 function! ZoteroCite()
@@ -108,9 +113,13 @@ noremap <leader>z "=ZoteroCite()<CR>p
 inoremap <C-z> <C-r>=ZoteroCite()<CR>
 
 " colorscheme
-colo nord
+colo elflord
 
 " r configuration
 let R_in_buffer = 0
 let R_tmux_split = 0
 let R_applescript = 0
+
+" do not wrap lines in the middle of a word
+set linebreak
+
