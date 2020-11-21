@@ -1,0 +1,7 @@
+# Button 2 as delete
+#"xvkbd -text '\d'"  # Sends delete
+#b:2
+
+# Delete using middle click
+" xte 'key 0xffff' " 
+b:2

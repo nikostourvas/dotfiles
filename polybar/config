@@ -64,7 +64,7 @@ font-2 = "Siji:style=Regular;4"
 
 modules-left = bspwm i3 memory cpu title
 modules-center = date
-modules-right = backlight alsa pulseaudio xkeyboard wlan eth battery temperature 
+modules-right = filesystem backlight alsa pulseaudio xkeyboard wlan eth battery temperature 
 
 tray-position = right
 tray-padding = 4

@@ -81,6 +81,10 @@ for_window [class="Viber"] floating enable
 #### launch thunderbird always in floating mode
 for_window [class="Thunderbird"] floating enable
 
+#### launch zotero always in floating mode
+for_window [class="Zotero"] floating enable
+
+
 #### nikos hide edge borders if there is only one window in the workspace
 hide_edge_borders smart
 
@@ -262,6 +266,7 @@ bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #exec_always --no-startup-id exec i3-workspace-names-daemon
 
 #Start polybar
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # open windows in a more natural way
@@ -271,7 +276,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #bindsym $mod+e layout toggle split # should already exist but use if split orientation  messes up
 
 # Lockscreen
-bindsym Mod4+Shift+x exec i3lock-fancy -g
+bindsym Mod4+Shift+x exec i3lock
 
 # Pulse Audio controls
 #  Run "pactl list sinks" to find device name
@@ -302,7 +307,9 @@ bindsym XF86AudioPrev exec playerctl previous
 #######################################################################
 # Wallpaper
 #exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/wallpapers/wallhaven-nkmqp6.jpg
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
+exec_always dyn-wall-rs -a ~/Pictures/dynamicwallpaper-lakeside-louis-coyle
+
 exec i3-config-wizard
 #exec caprine
 #exec viber-unofficial.viber
@@ -310,18 +317,18 @@ exec i3-config-wizard
 #exec psensor
 #exec "setxkbmap -layout us,gr"
 #exec "setxkbmap -option 'grp:win_space_toggle'"
-exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec --no-startup-id redshift-gtk
+exec_always --no-startup-id compton --config ~/.config/compton.conf -b
+#exec --no-startup-id redshift-gtk
 exec --no-startup-id blueman-applet
 #exec skype
 #exec fluxgui
 #exec --no-startup-id i3-battery-popup
 
 # gaps
-gaps inner 0 # previous value 10
-gaps outer 0
+#gaps inner 0 # previous value 10
+#gaps outer 0
 
-smart_gaps on
+#:wsmart_gaps on
 
 # GNOME startup applications
 
