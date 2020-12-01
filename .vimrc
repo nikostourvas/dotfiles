@@ -113,7 +113,7 @@ noremap <leader>z "=ZoteroCite()<CR>p
 inoremap <C-z> <C-r>=ZoteroCite()<CR>
 
 " colorscheme
-colo elflord
+colo nord
 
 " r configuration
 let R_in_buffer = 0

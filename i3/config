@@ -45,14 +45,14 @@ workspace 9 output HDMI-1
 workspace 10 output HDMI-1
 
 # add HDMI monitor when connected
-exec --no-startup-id xrandr --output VGA1 --right-of LVDS1
-bindsym $Mod4+m exec --no-startup-id xrandr --output VGA1 --auto --right-of LVDS1
+#exec --no-startup-id xrandr --output VGA1 --right-of LVDS1
+#bindsym $Mod4+m exec --no-startup-id xrandr --output VGA1 --auto --right-of LVDS1
 
 #### nikos edit font
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:DejaVu Sans Mono 8
 font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 9
-font pango:Terminus 9px
+font pango:Terminus 13px
 
 ### nikos no titlebars
 for_window [class="^.*"] border pixel 5
