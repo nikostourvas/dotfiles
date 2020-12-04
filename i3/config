@@ -52,7 +52,7 @@ workspace 10 output HDMI-1
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:DejaVu Sans Mono 8
 font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 9
-font pango:Terminus 13px
+font pango:Terminus 12px
 
 ### nikos no titlebars
 for_window [class="^.*"] border pixel 5
@@ -364,6 +364,12 @@ bindsym Mod4+n exec caja
 
 # screenshots
 bindsym --release Print exec "scrot -m '/home/nikos/Pictures/%s_%H%M_%d.%m.%Y_$wx$h.png'"
+
+# syncthing
+exec --no-startup-id flatpak run me.kozec.syncthingtk
+
+# Viber
+exec --no-startup-id flatpak run com.viber.Viber
 
 # FIX UPDATER
 #
