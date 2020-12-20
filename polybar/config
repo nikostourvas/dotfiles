@@ -35,7 +35,7 @@ alert = #bd2c40
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 18
+height = 22
 ;offset-x = 27%
 ;offset-y = 1%
 radius = 0.0
@@ -58,8 +58,8 @@ module-margin-left = 1
 module-margin-right = 2
 
 ;font-0 = "Cantarell:style=Bold:pixelsize=11;4:antialias=true"
-font-0 = "Noto Sans:style=SemiBold:pixelsize=11;5:antialias=true"
-font-1 = "Unifont:style=Medium;5"
+font-0 = "Noto Sans:style=Bold:pixelsize=12;4:antialias=true"
+font-1 = "Unifont:style=Medium;4"
 font-2 = "Siji:style=Regular;4"
 
 modules-left = bspwm i3 memory cpu title
@@ -72,7 +72,7 @@ tray-padding = 4
 ;tray-background = #0063ff
 tray-background = #000000
 ;tray-maxsize = 13
-tray-scale = 1.2
+tray-scale = 1.0
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -101,7 +101,7 @@ format-padding = 4
 ;   %title%
 ; Default: %title%
 label = %title%
-label-maxlen = 75
+label-maxlen = 64
 
 ; Used instead of label when there is no window title
 ; Available tokens:
