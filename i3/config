@@ -1,4 +1,3 @@
-# i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
@@ -52,10 +51,10 @@ workspace 10 output HDMI-1
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:DejaVu Sans Mono 8
 font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 9
-font pango:Terminus 12px
+font pango:Terminus 16px
 
 ### nikos no titlebars
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 3
 
 ### rounded corners???
 #border_radius 2
@@ -84,6 +83,13 @@ for_window [class="Thunderbird"] floating enable
 #### launch zotero always in floating mode
 for_window [class="Zotero"] floating enable
 
+#### launch signal always in floating mode
+for_window [class="Signal"] floating enable
+
+#### launch imagej always in floating mode
+for_window [class="(Fiji Is Just) ImageJ"] floating enable
+
+
 
 #### nikos hide edge borders if there is only one window in the workspace
 hide_edge_borders smart
@@ -109,10 +115,11 @@ set $right l
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec i3-sensible-terminal
+#bindsym Mod4+Return exec i3-sensible-terminal
+bindsym Mod4+Return exec gnome-terminal
 
 # kill focused window
-bindsym Mod4+Shift+q kill
+bindsym Mod4+q kill
 
 # start dmenu (a program launcher)
 #bindsym Mod4+d exec dmenu_run
@@ -283,13 +290,15 @@ bindsym Mod4+Shift+x exec i3lock
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 0 toggle # mute mic
+#bindsym Mod4+F4 exec urxvt -e "pacmd mute-input off"
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 1  # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+#exec_always --no-startup-id xinput --disable "SynPS/2 Synaptics TouchPad"
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -308,7 +317,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Wallpaper
 #exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/wallpapers/wallhaven-nkmqp6.jpg
 #exec --no-startup-id nitrogen --restore
-exec_always dyn-wall-rs -a ~/Pictures/dynamicwallpaper-lakeside-louis-coyle
+exec_always dyn-wall-rs -a ~/Pictures/corvo-blanco
 
 exec i3-config-wizard
 #exec caprine
@@ -325,8 +334,8 @@ exec --no-startup-id blueman-applet
 #exec --no-startup-id i3-battery-popup
 
 # gaps
-#gaps inner 0 # previous value 10
-#gaps outer 0
+#gaps inner 10 # previous value 10
+#gaps outer 10
 
 #:wsmart_gaps on
 
@@ -335,8 +344,11 @@ exec --no-startup-id blueman-applet
 # network manager
 exec --no-startup-id nm-applet
 
+# polkit
+exec --no-startup-id polkit-gnome
 # SSH Key Agent
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh
+exec --no-startup-id keepassxc
 
 # Snap user application autostart helper
 exec --no-startup-id /usr/bin/snap userd --autostart
@@ -370,6 +382,12 @@ exec --no-startup-id flatpak run me.kozec.syncthingtk
 
 # Viber
 exec --no-startup-id flatpak run com.viber.Viber
+
+# signal
+exec --no-startup-id signal-desktop
+
+# set fan speed to zero
+exec_always echo level 0 | sudo tee /proc/acpi/ibm/fan
 
 # FIX UPDATER
 #

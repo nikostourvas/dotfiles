@@ -35,12 +35,12 @@ alert = #bd2c40
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 22
+height = 32
 ;offset-x = 27%
 ;offset-y = 1%
 radius = 0.0
 fixed-center = true
-bottom = true
+bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -58,21 +58,21 @@ module-margin-left = 1
 module-margin-right = 2
 
 ;font-0 = "Cantarell:style=Bold:pixelsize=11;4:antialias=true"
-font-0 = "Noto Sans:style=Bold:pixelsize=12;4:antialias=true"
-font-1 = "Unifont:style=Medium;4"
-font-2 = "Siji:style=Regular;4"
+font-0 = "Noto Sans:style=Bold:pixelsize=12.5;4:antialias=true"
+font-1 = "Unifont:style=Medium:pixelsize=15;4"
+font-2 = "Siji:style=Regular:pixelsize=15;4"
 
 modules-left = bspwm i3 memory cpu title
 modules-center = date
 modules-right = filesystem backlight alsa pulseaudio xkeyboard wlan eth battery temperature 
 
 tray-position = right
-tray-padding = 4
+tray-padding = 10
 ;tray-offset-y = 2
 ;tray-background = #0063ff
 tray-background = #000000
-;tray-maxsize = 13
-tray-scale = 1.0
+tray-maxsize = 19
+tray-scale = 1
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -101,7 +101,7 @@ format-padding = 4
 ;   %title%
 ; Default: %title%
 label = %title%
-label-maxlen = 64
+label-maxlen = 46
 
 ; Used instead of label when there is no window title
 ; Available tokens:
