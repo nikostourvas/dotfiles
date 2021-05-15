@@ -377,7 +377,7 @@ ramp-free-7 = █
 type = internal/date
 interval = 5
 
-date = %a %d %b
+date = %a %d
 date-alt =
 
 time = %H:%M
