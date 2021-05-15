@@ -9,9 +9,10 @@
 #https://retorque.re/zotero-better-bibtex/citing/cayw/
 # pandoc and pandoc-citeproc are also needed to install on ubuntu
 
-sudo add-apt-repository ppa:saiarcot895/chromium-beta
-sudo apt update
-sudo apt install chromium-browser
+#chromium with video acceleration
+#sudo add-apt-repository ppa:saiarcot895/chromium-beta
+#sudo apt update
+#sudo apt install chromium-browser
 # check the website for instructions
 # https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-beta
 
