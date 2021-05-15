@@ -1,6 +1,6 @@
 # *dotfiles*
 
-This repository contains a collection of dotfiles for my personal i3wm desktop based on Ubuntu.
+This repository contains a collection of dotfiles for my personal i3wm desktop based on Ubuntu 20.04.
 
 ## To install
 
