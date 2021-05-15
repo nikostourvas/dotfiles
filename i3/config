@@ -86,8 +86,14 @@ for_window [class="Zotero"] floating enable
 #### launch signal always in floating mode
 for_window [class="Signal"] floating enable
 
-#### launch imagej always in floating mode
-for_window [class="(Fiji Is Just) ImageJ"] floating enable
+##### launch imagej always in floating mode
+for_window [class="fiji-Main"] floating enable
+
+### launch archive-manager always in floating mode
+for_window [class="File-roller"] floating enable
+
+### you can find the class name of other software by
+# typing in a terminal "xprop"
 
 
 
@@ -290,7 +296,7 @@ bindsym Mod4+Shift+x exec i3lock
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 0 toggle # mute mic
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle # mute mic
 #bindsym Mod4+F4 exec urxvt -e "pacmd mute-input off"
 
 # Sreen brightness controls
@@ -317,7 +323,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Wallpaper
 #exec_always --no-startup-id feh --bg-scale /home/nikos/Pictures/wallpapers/wallhaven-nkmqp6.jpg
 #exec --no-startup-id nitrogen --restore
-exec_always dyn-wall-rs -a ~/Pictures/corvo-blanco
+exec_always dyn-wall-rs -a ~/Pictures/catalina
 
 exec i3-config-wizard
 #exec caprine
