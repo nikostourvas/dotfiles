@@ -45,7 +45,7 @@ sudo snap install p7zip-desktop
 sudo snap install keepassxc
 
 # Detect laptop sensors
-# Run manualy
+# Run manualy the following:
 # sudo sensors-detect
 
 # Install Vundle for vim
@@ -55,6 +55,18 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cd ~/Downloads 
 git clone https://github.com/stark/siji && cd siji
 ./install.sh
+
+# Install polybar
+sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+git clone --recursive https://github.com/polybar/polybar
+cd polybar
+
+mkdir build
+cd build
+cmake ..
+make -j$(nproc)
+	# Optional. This will install the polybar executable in /usr/local/bin
+sudo make install
 
 # Install Nextwaita
 #git clone https://github.com/paullinuxthemer/Nextwaita && cd Nextwaita
