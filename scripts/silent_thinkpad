@@ -1,0 +1,2 @@
+#!/bin/sh
+echo level 0 | sudo tee /proc/acpi/ibm/fan
