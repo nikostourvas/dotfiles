@@ -38,7 +38,8 @@ sudo apt install -y compton \
 	grsync \
 	luckybackup \
 	tldr \
-	autorandr
+	autorandr \
+	tilix
 	
 # Install snap packages
 sudo snap install p7zip-desktop
