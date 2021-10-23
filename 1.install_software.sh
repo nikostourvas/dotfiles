@@ -39,7 +39,8 @@ sudo apt install -y compton \
 	luckybackup \
 	tldr \
 	autorandr \
-	tilix
+	tilix \
+	minder
 	
 # Install snap packages
 sudo snap install p7zip-desktop
