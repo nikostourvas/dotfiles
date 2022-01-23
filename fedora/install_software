@@ -1,0 +1,6 @@
+# for Greek in Geary (RPM) install:
+sudo dnf install hunspell hunspell-el
+
+# for Greek in Geary (Flatpak) install:
+flatpak config --set extra-languages "fr_EL"
+flatpak update
